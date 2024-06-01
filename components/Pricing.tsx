@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
+import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 const pricingData = [
   {
     title: "Basic Plan",
@@ -49,23 +49,25 @@ const pricingData = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="">
+    <section id="pricing" className="container mx-auto">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-      <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-  <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-    Pricing Plans Tailored for Your Business Needs
-  </h2>
-  <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
-    At FusionDev Solutions, we offer flexible pricing plans to help your business grow. 
-    Our plans are designed to provide value and scalability, ensuring you have the right tools and support 
-    to succeed in the digital landscape.
-  </p>
-</div>
+        <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+          <h2 className="   text-gray-900 dark:text-white max-w-2xl text-6xl pb-20 text-center  text-white/[.9]">
+            Choose a Plane
+          </h2>
+          <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
+            At FusionDev Solutions, we offer flexible pricing plans to help your
+            business grow. Our plans are designed to provide value and
+            scalability, ensuring you have the right tools and support to
+            succeed in the digital landscape.
+          </p>
+        </div>
 
         <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 items-start">
           {pricingData.map((p, i) => (
             <PricingCard
               key={i}
+              i={i}
               featureList={p.featureList}
               isMonth={p.isMonth}
               price={p.price}
@@ -87,6 +89,7 @@ type PricingCardProps = {
   featureList: {
     title: string;
   }[];
+  i: number;
 };
 const PricingCard = ({
   featureList,
@@ -94,34 +97,41 @@ const PricingCard = ({
   price,
   smallDescription,
   title,
+  i,
 }: PricingCardProps) => {
   return (
     <CardContainer className="">
-      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full rounded-xl p-6 border  ">
+      <CardBody
+        className={`bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black  border border-gray-500/[.5] w-full rounded-xl p-6   `}
+      >
         <CardItem
           translateZ="50"
           className=" mb-4 text-2xl font-semibold  text-neutral-600 dark:text-white"
         >
-          {title}
+          {title}{" "}
+          {i === 2 && (
+            <small className="px-2 py-1 bg-purple-600 text-white text-sm rounded-lg">
+              most popular
+            </small>
+          )}
         </CardItem>
-        <CardItem 
+        <CardItem
           translateZ="30"
-          className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+          className="font-light text-gray-500 sm:text-lg dark:text-gray-400"
+        >
           {smallDescription}
         </CardItem>
-        <CardItem 
+        <CardItem
           translateZ="80"
-        
-        className="flex justify-center items-baseline my-8">
+          className="flex justify-center items-baseline my-8"
+        >
           <span className="mr-2 text-5xl font-extrabold">{price}</span>
           <span className="text-gray-500 dark:text-gray-400">
             /{isMonth ? "month" : "year"}
           </span>
         </CardItem>
 
-        <CardItem
-          translateZ="100"
-          >
+        <CardItem translateZ="100">
           <ul role="list" className="mb-8 space-y-4 text-left">
             {featureList.map((l, i) => (
               <li key={i} className="flex items-center space-x-3">
