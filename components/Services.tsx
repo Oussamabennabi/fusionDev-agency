@@ -78,7 +78,7 @@ const content = [
 
 export function Services() {
   return (
-    <SectionContainer>
+    <SectionContainer id="services">
       <div className=" rounded-xl  w-full ">
         <GridItem className="w-full mb-6">
           <Heading>OUR SERVICES.</Heading>

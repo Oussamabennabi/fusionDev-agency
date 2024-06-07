@@ -6,7 +6,7 @@ import { Heading, P } from "./ui/Typography";
 
 export function Testimonials() {
   return (
-    <SectionContainer>
+    <SectionContainer id="testimonials">
       <div className=" rounded-xl w-full ">
         <GridItem className="w-full mb-6">
           <Heading>TESTIMONIALS.</Heading>

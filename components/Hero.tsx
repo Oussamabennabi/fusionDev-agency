@@ -29,27 +29,27 @@ const heroItems = [
     label: "3+ years",
   },
 ];
-export function Hero() {
+export function Hero({title,description,heroImage="/logo.png"}:{title:string,description:string,heroImage?:string}) {
   return (
     <>
       <SectionContainer className="mb-0 mt-0">
         <div className="grid gap-6 grid-cols-3">
-          <GridItem className=" lg:col-span-2 col-span-3  pt-20">
-            <Heading>DIGITAL SOLUTIONS THAT DRIVES SUCCESS.</Heading>
-            <P>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
-              necessitatibus?, Lorem ipsum dolor sit amet consectetur,
-              adipisicing elit. Ipsum, necessitatibus?,
+          <GridItem className="h-full flex flex-col items-start justify-between lg:col-span-2 col-span-3  pt-20">
+            <Heading className="uppercase my-auto">{title} WEBSITES.</Heading>
+            <P>{description}
             </P>
+            <div className="mt-auto w-full">
             <ServicesBanner />
+
+            </div>
           </GridItem>
-          <GridItem className="lg:block hidden p-0">
-            <Image src={"/logo.png"} className="object-cover rounded-xl h-full w-full" alt="logo" width={500} height={500}/>
+          <GridItem className="lg:block  hidden p-0">
+            <Image src={heroImage} className="object-cover rounded-xl h-full w-full" alt="logo" width={500} height={500}/>
           </GridItem>
         </div>
       </SectionContainer>
 
-      <SectionContainer className="my-0 pt-0">
+      <SectionContainer className="my-0  pt-0">
         <div className=" rounded-xl h-full lg:flex-nowrap flex-wrap  w-full flex  justify-center items-center gap-6">
           {heroItems.map((item, i) => (
             <GridItem key={i} className="h-[112px] w-fit flex-1 text-center">

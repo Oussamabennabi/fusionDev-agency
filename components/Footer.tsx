@@ -43,10 +43,35 @@ export function Footer() {
         </div>
         <div className="md:col-span-4 space-y-6 col-span-5">
           <GridItem>
-            4 columns of footer link (Home, Services, Projects, Blogs)
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div>
+      <h2 className="font-bold mb-4">Home</h2>
+      <ul>
+        <li><a href="#" className="text-gray-400 hover:text-white">About Us</a></li>
+        <li><a href="#" className="text-gray-400 hover:text-white">Contact</a></li>
+        <li><a href="#" className="text-gray-400 hover:text-white">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 className="font-bold mb-4">Services</h2>
+      <ul>
+        <li><Link href="#" className="text-gray-400 hover:text-white">Web Development</Link></li>
+        <li><Link href="#" className="text-gray-400 hover:text-white">App Development</Link></li>
+        <li><Link href="#" className="text-gray-400 hover:text-white">SEO Services</Link></li>
+      </ul>
+    </div>
+    <div>
+      <h2 className="font-bold mb-4">Projects</h2>
+      <ul>
+        <li><Link href="#" className="text-gray-400 hover:text-white">Recent Works</Link></li>
+        <li><Link href="#" className="text-gray-400 hover:text-white">Case Studies</Link></li>
+        <li><Link href="#" className="text-gray-400 hover:text-white">Client Testimonials</Link></li>
+      </ul>
+    </div>
+  </div>
           </GridItem>
           <GridItem className="flex justify-between items-center">
-            <small>©️ 2024 Oussama. All rights reserved.</small>
+            <small>©️ 2024 DX. All rights reserved.</small>
             <div>
               <a href="">Terms & Conditions</a>  |  <a href="">Privacy Policy</a>
             </div>

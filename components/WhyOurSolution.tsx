@@ -6,7 +6,7 @@ import { Heading} from "./ui/Typography";
 
 export function WhyOurSolution() {
   return (
-    <SectionContainer>
+    <SectionContainer id="whyus">
       <div className=" rounded-xl  w-full ">
         <GridItem className="w-full mb-6">
           <Heading>REASONE TO CHOOSE US.</Heading>

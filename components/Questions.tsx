@@ -37,7 +37,7 @@ const AccordionItem = ({ header, ...rest }: any) => (
 
 const Questions = () => {
   return (
-    <SectionContainer>
+    <SectionContainer id="questions">
       <GridItem className="w-full mb-6">
         <Heading>FREAQUANTLY ASKED QUESTIONS.</Heading>
       </GridItem>

@@ -17,7 +17,7 @@ export function ContactUs() {
   };
 
   return (
-    <SectionContainer>
+    <SectionContainer id="contactus">
       <div className="grid gap-6 grid-cols-2">
         <GridItem className="col-span-2 lg:col-span-1">
           <div className=" mx-auto space-y-6">
@@ -32,19 +32,19 @@ export function ContactUs() {
               <div className="flex items-center space-x-4">
                 <Phone className="hover:text-primary transition-all"/>
                 <span className="text-gray-700 dark:text-gray-300">
-                  +1 (123) 456-7890
+                  +213 (555) 23 77 97
                 </span>
               </div>
               <div className="flex items-center space-x-4">
                 <Mail className="hover:text-primary transition-all"/>{" "}
-                <span className="text-gray-700 dark:text-gray-300">
-                  contact@fusiondevsolutions.com
-                </span>
+                <a href="mailto:oussama.bennabi.work@gmail.com" className="text-gray-700 dark:text-gray-300">
+                  oussama.bennabi.work@gmail.com
+                </a>
               </div>
               <div className="flex items-center space-x-4">
                 <MapPin className="hover:text-primary transition-all"/>
                 <span className="text-gray-700 dark:text-gray-300">
-                  1234 Fusion St, Tech City, TX 56789
+                  Algeria Tlemcen, Ghazaouat 13020
                 </span>
               </div>
             </div>
